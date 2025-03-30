@@ -1,0 +1,90 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out; // Анимация появления
+
+
+    .container {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .section {
+        flex: 1;
+        min-width: 200px;
+        text-align: left;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: fadeIn 0.8s ease-out forwards;
+        animation-delay: 0.3s;
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin: 5px 0;
+                opacity: 0;
+                transform: translateY(5px);
+                animation: fadeIn 0.8s ease-out forwards;
+                animation-delay: 0.5s;
+            }
+
+            a {
+                color: #bbb;
+                text-decoration: none;
+                transition:
+                    color 0.3s,
+                    transform 0.3s;
+
+                &:hover {
+                    color: #f39c12;
+                    transform: scale(1.05); // Лёгкий эффект увеличения
+                }
+            }
+        }
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .description {
+        font-size: 14px;
+        color: #bbb;
+        margin-top: 5px;
+    }
+
+    .copyright {
+        border-top: 1px solid #444;
+        margin-top: 20px;
+        padding-top: 15px;
+        font-size: 14px;
+        opacity: 0.7;
+        animation: fadeIn 1s ease-out forwards;
+        animation-delay: 0.6s;
+    }
+}

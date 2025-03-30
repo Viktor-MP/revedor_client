@@ -1,0 +1,100 @@
+:root {
+    --spring-easing: linear-gradient(0, 0.01, 0.03, 0.14 4%, 0.72 13%, 0.94, 1.08, 1.12, 1.15, 1.16, 1.15,
+            1.13 33%, 1.02 43%, 0.99, 0.98 51%, 0.97 57%, 1 70% 100%);
+    --spring-duration: 1.533s;
+}
+
+
+.list.samePath {
+    box-shadow: 0px -4px 5px 11px rgba(0, 0, 0, 0.46);
+    -webkit-box-shadow: 0px -4px 5px 11px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px -4px 5px 11px rgba(0, 0, 0, 0.46);
+}
+
+.list {
+    box-shadow: -1px 37px 5px -27px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: -1px 37px 5px -27px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: -1px 37px 5px -27px rgba(0, 0, 0, 0.13);
+    transition: box-shadow var(--bounce-duration) var(--bounce-easing);
+
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.2rem;
+
+    border-radius: 0.7rem;
+    z-index: 1;
+
+    a {
+        text-wrap: nowrap;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: inherit;
+
+        filter: drop-shadow(-5px 5px 5px #0a0212);
+    }
+}
+
+.list::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scale(0, 0);
+    border-radius: 0.7rem;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    box-shadow: 0px -4px 5px 11px rgba(0, 0, 0, 0.46);
+    -webkit-box-shadow: 0px -4px 5px 11px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px -4px 5px 11px rgba(0, 0, 0, 0.46);
+    background: var(--light-gray);
+    transition: transform 0.5s ease;
+}
+
+
+.list.left.top:hover:after,
+.list.left.top::after {
+    transform-origin: left top;
+}
+
+.list.left.bottom:hover:after,
+.list.left.bottom::after {
+    transform-origin: left bottom;
+}
+
+.list.right.top:hover:after,
+.list.right.top::after {
+    transform-origin: right top;
+}
+
+.list.right.bottom:hover:after,
+.list.right.bottom::after {
+    transform-origin: right bottom;
+}
+
+
+.list:not(.samePath):hover::after {
+    transform: scale(1);
+}
+
+.list.top:hover::after,
+.list.top::after {
+    transform-origin: top;
+}
+
+.list.bottom:hover::after,
+.list.bottom::after {
+    transform-origin: bottom;
+}
+
+.list.left:hover::after,
+.list.left::after {
+    transform-origin: left;
+}
+
+.list.right:hover::after,
+.list.right::after {
+    transform-origin: right;
+}

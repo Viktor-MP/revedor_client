@@ -1,0 +1,31 @@
+@import "../global.scss";
+
+.termsOfService {
+    background: var(--white);
+    color: var(--black);
+    padding: 40px 20px;
+    text-align: left;
+    max-width: 800px;
+    margin: auto;
+    animation: fadeIn 1s ease-out;
+
+    h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: var(--purple);
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin-top: 20px;
+        color: var(--wbPurple);
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 15px;
+        opacity: 0.9;
+        line-height: 1.6;
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "hello": "hello",
+    "about": {
+        "us": "About us",
+        "brand_description": "Reve d’Or,Elegant,Sophisticated,High-quality,Natural",
+        "guide": "A brand of high quality perfumes imported from France, epitomizing elegance and sophistication. The brand's products are created only from high quality natural raw materials, providing delicacy and persistence of exceptional fragrances. Reve d'Or perfume retains its persistence for more than 24 hours, which makes it an ideal choice both for everyday use and for special occasions. The brand pays great attention to the quality of each ingredient, believing that each fragrance should convey exclusivity and charm. Reve d'Or fragrances are ideal for people who appreciate the tradition and high quality of French fragrances.",
+        "history": "Reve d’Or brand was born over a year ago with a great love and dedication to the art of fragrance. Our journey began with a desire to create perfumes of exceptional French quality, combining natural raw materials and modern approaches. The creation of the brand is based on a deep respect for the work of the masters who have been developing the perfumery culture of France for centuries. We want to offer our customers not only fragrances, but also feelings created with love, skill and carefully selected ingredients. During this year, Reve d'Or has already won the trust of hundreds of customers with its quality products. Our main mission is to create fragrances that will inspire, preserve memories and become an integral part of your everyday life. We are proud that our brand continues to evolve and thank everyone who has been with us along the way."
+    },
+    "products": {
+        
+        "main": "Main",
+        "pr": "Products",
+        "art": "Article",
+        "description": "Description",
+        "baseInfo": "Basic information",
+        "rec": "recommendations",
+        "copied": "Copied",
+
+        "char": "Characteristics and description",
+        "ingredients": "Ingredients",
+        "group": "Fragrance group",
+        "see": "Buy in wildberries",
+        "advantages": "Advantages"
+    },
+    "contacts": {
+        "co": "Contacts"
+    },
+    "footer": {
+        "privacy_policy": "Privacy policy",
+        "terms_of_use": "Terms of use",
+        "return_policy": "Return policy",
+        "payment_and_delivery": "Payment and delivery",
+
+        "desc": "We advertise the best products from Wildberries. Discover new items!",
+        "nav": "Navigation",
+        "social": "Social networks",
+        "legal": "Legal information",
+
+        "all": "All rights reserved."
+
+    },
+    "search": {
+        "search": "Search",
+        "search_placeholder": "Search products"
+    }
+}

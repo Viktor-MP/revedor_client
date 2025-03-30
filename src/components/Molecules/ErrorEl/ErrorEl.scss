@@ -1,0 +1,38 @@
+// ErrorComponent.scss
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5a623, #ff416c);
+  color: #fff;
+  font-family: Arial, sans-serif;
+
+  h1 {
+    font-size: 8rem;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .back-home {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #ff416c;
+    background-color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #ff416c;
+      color: #fff;
+    }
+  }
+}

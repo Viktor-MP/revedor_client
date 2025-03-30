@@ -1,0 +1,76 @@
+@import "../../global.scss";
+
+
+
+.contacts {
+  background: var(--white);
+  color: var(--black);
+  padding: 40px 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--purple);
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+    color: var(--black);
+  }
+
+  .contactInfo {
+    margin-bottom: 20px;
+    a {
+      color: var(--wbPurple);
+      text-decoration: none;
+      transition: color 0.3s;
+      &:hover {
+        color: var(--purple);
+      }
+    }
+  }
+
+  .form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--purple);
+      border-radius: 5px;
+      font-size: 16px;
+      background: var(--white);
+      color: var(--black);
+    }
+
+    button {
+      background: var(--wbPurple);
+      color: var(--white);
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s, transform 0.2s;
+      &:hover {
+        background: var(--purple);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .status {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--purple);
+  }
+}

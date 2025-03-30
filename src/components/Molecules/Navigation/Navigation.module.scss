@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    align-items: center;
+    // width: 40%;
+    text-align: center;
+    position: relative;
+    
+    ul {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}

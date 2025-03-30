@@ -1,0 +1,59 @@
+@use "../../../App.scss";
+@use "../../../Variables.scss" as vars;
+
+:root {
+    --temp_column: 5;
+}
+
+.productsSection {
+    display: grid;
+    gap: 5rem 1rem;
+    grid-template-columns: repeat(var(--temp_column), minmax(200px, 1fr));
+    padding: var(--page_pad);
+}
+
+.pagination-controls {
+    margin: 2rem 0 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    span {
+        font-size: 1.2rem;
+        background-color: #f8f9fa;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        color: #343a40;
+    }
+    span.active {
+        background-color: #007bff;
+        color: white;
+    }
+
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+        background-color: #0056b3;
+    }
+}
+
+@media screen and (max-width: vars.$breakpoint-xl) {
+    .productsSection {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

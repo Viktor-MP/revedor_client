@@ -1,0 +1,42 @@
+.section {
+    max-width: 1.5rem;
+    height: max-content;
+    position: relative;
+
+    span {
+        display: none;
+    }
+
+    img {
+        box-shadow: 4px 7px 25px -7px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 4px 7px 25px -7px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 4px 7px 25px -7px rgba(0, 0, 0, 0.75);
+        width: 100%;
+    }
+
+    .drop {
+        height: 0;
+        overflow-y: clip;
+        position: absolute;
+
+        transition: height 1s var(--bounce-easing), background-color 1s ease;
+    }
+
+    .open {
+        height: auto;
+    }
+
+}
+
+
+
+@media (hover: hover) and (pointer: fine) {
+
+    .option {
+        padding: 1px;
+
+        &:hover {
+            background-color: greenyellow;
+        }
+    }
+}

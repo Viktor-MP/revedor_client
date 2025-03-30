@@ -1,0 +1,13 @@
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1300px;
+
+$head-Deg: 135deg;
+$bar-Deg: 90deg;
+
+
+$grad-hed: linear-gradient($head-Deg, #6a11cb, #2575fc);
+$grad-bar: linear-gradient($bar-Deg, #6a11cb, #2575fc);

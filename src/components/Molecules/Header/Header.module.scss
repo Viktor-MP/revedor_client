@@ -1,0 +1,46 @@
+@use "../../../Variables.scss" as vars;
+
+
+.header {
+  position: sticky;
+  width: 100%;
+  min-height: 9vh;
+  top: 0;
+  background: vars.$grad-hed;
+
+
+  display: flex;
+  padding: 1.5rem 1rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  z-index: 5;
+
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 15rem;
+
+  filter: drop-shadow(-5px 5px 5px #0a0212);
+}
+
+.header__nav {
+  display: flex;
+  gap: 1rem;
+
+  .header__link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
