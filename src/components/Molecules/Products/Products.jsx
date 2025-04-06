@@ -20,10 +20,9 @@ const Products = ({ className }) => {
     const [itemsPerPage, setItemsPerPage] = useState(20)
     const [pagesCount, setPagesCount] = useState()
 
+    console.log(data)
     const [searchParams, setSearchParams] = useSearchParams()
     const products = i18n.store.data[i18n.resolvedLanguage].translation.products
-
-    const dataProdLen = data?.products?.length
 
     const page = ~~+searchParams.get("page") || 1
     const startIndex = (page - 1) * itemsPerPage || 0
@@ -47,6 +46,7 @@ const Products = ({ className }) => {
             const responses = await Promise.all(
                 Array.from({ length: p }).map((_, pi) => fetchData(pi + 1))
             )
+            console.log(responses)
             responses.forEach((res) => {
                 data.products.push(...res.data.products)
             })
@@ -81,11 +81,9 @@ const Products = ({ className }) => {
             fetchDataAsync(dataReqPage)
         }
         updateQuery(page)
-
     }, [page])
 
     const draw_ProductCards = (data) => {
-
         return data.slice(startIndex, startIndex + itemsPerPage).map((da) => {
             return (
                 <ProductCard
@@ -120,44 +118,46 @@ const Products = ({ className }) => {
             </div>
 
             {/* Pagination Controls */}
-            <div className={Styles["pagination-controls"]}>
-                <button onClick={() => updateQuery(+page - 1)}>Prev</button>
-                <span
-                    key={1}
-                    onClick={() => updateQuery(1)}
-                    className={classnames({
-                        [Styles["active"]]: page == 1,
-                    })}
-                >
-                    {1}
-                </span>
+            {pagesCount > 1 && (
+                <div className={Styles["pagination-controls"]}>
+                    <button onClick={() => updateQuery(+page - 1)}>Prev</button>
+                    <span
+                        key={1}
+                        onClick={() => updateQuery(1)}
+                        className={classnames({
+                            [Styles["active"]]: page == 1,
+                        })}
+                    >
+                        {1}
+                    </span>
 
-                <>
-                    {Array.from({ length: pagesCount - 2 }, (_, i) =>
-                        i < page + 1 && i > page - 5 ? (
-                            <span
-                                key={i + 2}
-                                onClick={() => updateQuery(i + 2)}
-                                className={classnames({
-                                    [Styles["active"]]: page == i + 2,
-                                })}
-                            >
-                                {i + 2}
-                            </span>
-                        ) : null
-                    )}
-                </>
-                <span
-                    key={pagesCount}
-                    onClick={() => updateQuery(pagesCount)}
-                    className={classnames({
-                        [Styles["active"]]: page == pagesCount,
-                    })}
-                >
-                    {pagesCount}
-                </span>
-                <button onClick={() => updateQuery(+page + 1)}>Next</button>
-            </div>
+                    <>
+                        {Array.from({ length: pagesCount - 2 }, (_, i) =>
+                            i < page + 1 && i > page - 5 ? (
+                                <span
+                                    key={i + 2}
+                                    onClick={() => updateQuery(i + 2)}
+                                    className={classnames({
+                                        [Styles["active"]]: page == i + 2,
+                                    })}
+                                >
+                                    {i + 2}
+                                </span>
+                            ) : null
+                        )}
+                    </>
+                    <span
+                        key={pagesCount}
+                        onClick={() => updateQuery(pagesCount)}
+                        className={classnames({
+                            [Styles["active"]]: page == pagesCount,
+                        })}
+                    >
+                        {pagesCount}
+                    </span>
+                    <button onClick={() => updateQuery(+page + 1)}>Next</button>
+                </div>
+            )}
         </main>
     )
 }

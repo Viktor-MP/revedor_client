@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ErrorMessage.scss";
-import { AlertTriangle } from "lucide-react"; // Importing an icon (optional)
+// import { AlertTriangle } from "lucide-react"; // Importing an icon (optional)
 
 const ErrorMessage = ({ message }) => {
     const [visible, setVisible] = useState(true);
@@ -9,7 +9,7 @@ const ErrorMessage = ({ message }) => {
 
     return (
         <div className="error-message">
-            <AlertTriangle className="error-icon" size={24} />
+            {/* <AlertTriangle className="error-icon" size={24} /> */}
             <span>
                 {message || "Something went wrong. Please try again later."}
               
