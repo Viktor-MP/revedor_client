@@ -1,4 +1,5 @@
-@use "../global.scss";
+@use "../global.scss" as *;
+
 .termsOfService {
     background: var(--white);
     color: var(--black);
