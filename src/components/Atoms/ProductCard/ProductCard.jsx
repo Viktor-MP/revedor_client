@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react"
 import Classes from "./ProductCard.module.scss"
 import classNames from "classnames"
 
-// import { useNavigate } from "react-router-dom"
 
 const ProductCard = ({
     id,
