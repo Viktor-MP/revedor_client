@@ -47,7 +47,10 @@ const Contacts = ({ className }) => {
             setTimeout(() => setStatus("Сообщение отправлено!"), 2000) // Заглушка для имитации запроса
         } catch (error) {
             setStatus("Ошибка отправки")
+        } finally {
+            setTimeout(() => setStatus(""), 2000) // Заглушка для имитации запроса
         }
+   
     }
 
  
@@ -63,17 +66,7 @@ const Contacts = ({ className }) => {
                 через форму ниже.
             </p>
 
-            <div className={Styles.contactInfo}>
-                <p>
-                    <strong>Email:</strong> yourshop@gmail.com
-                </p>
-                <p>
-                    <strong>Telegram:</strong>{" "}
-                    <a href="https://t.me/yourshop" target="_blank">
-                        @yourshop
-                    </a>
-                </p>
-            </div>
+        
 
             <form onSubmit={handleSubmit} className={Styles.form}>
                 <input
