@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    espect-ratio: 1/1.6;
+
     .dotes {
         display: flex;
         justify-content: center;
@@ -37,7 +37,6 @@
             text-align: center;
             text-transform: capitalize;
 
-
             color: white;
             font-weight: bold;
             text-decoration: none;
@@ -54,6 +53,8 @@
 
     border-radius: 1rem;
     overflow: hidden;
+    aspect-ratio: 1/1.35;
+    width: 100%;
 
     .current-image {
         height: 100%;
