@@ -1,6 +1,11 @@
 @use "../../../App.scss";
 @use "../../../Variables.scss" as vars;
 
+:root {
+    --windowWidth: 50vw;
+    --windowHeight: 90vh;
+}
+
 .window {
     position: absolute;
     top: 0;
@@ -32,8 +37,9 @@
         top: 0;
         transform: translate(+50%, +5%);
 
-        width: 50vw;
-        height: 90vh;
+        width: var(--windowWidth);
+        height: var(--windowHeight);
+
         border: solid var(--wbPurple) 0.2rem;
         background-color: var(--white);
         border-radius: 1rem;
@@ -154,8 +160,7 @@
                 border-radius: 1rem;
                 font-weight: 600;
                 border: none;
-                
-                
+
                 a {
                     display: block;
                     padding: 0.5rem 1.5rem;
@@ -191,6 +196,63 @@
                     grid-column-start: span 1;
                 }
             }
+
+            /* --windowWidth: 70vw; */
+            /* transform: translate(+5%, +5%); */
+        }
+        @media screen and (max-width: vars.$breakpoint-lg) {
+            .mainInfo {
+                grid-template-columns: 1fr;
+
+                .images {
+                    padding: 1rem;
+                    height: 72.5vw;
+                }
+
+                .description {
+                    grid-column-start: span 1;
+                }
+            }
+
+            --windowWidth: 70vw;
+            transform: translate(+20%, +5%);
+        }
+        @media screen and (max-width: vars.$breakpoint-md) {
+            .mainInfo {
+                grid-template-columns: 1fr;
+
+                .images {
+                    padding: 1rem;
+                    height: 92.5vw;
+                }
+
+                .description {
+                    grid-column-start: span 1;
+                }
+            }
+
+            --windowWidth: 90vw;
+            transform: translate(+5%, +5%);
+        }
+
+        @media screen and (max-width: vars.$breakpoint-sm) {
+            .mainInfo {
+                grid-template-columns: 1fr;
+
+                .images {
+                    padding: 1rem;
+                    height: 100.5vw;
+                }
+
+                .description {
+                    grid-column-start: span 1;
+                }
+            }
+            border:none;
+            border-radius: 0;
+            --windowWidth: 100vw;
+            --windowHeight: 100vh;
+            transform: translate(0, 0);
         }
     }
 }
