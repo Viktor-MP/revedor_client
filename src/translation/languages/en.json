@@ -1,5 +1,4 @@
 {
-    "hello": "hello",
     "about": {
         "us": "About us",
         "brand_description": "Reve d’Or,Elegant,Sophisticated,High-quality,Natural",
@@ -23,7 +22,18 @@
         "advantages": "Advantages"
     },
     "contacts": {
-        "co": "Contacts"
+        "co": "Contacts",
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "social": "Social networks",
+        "feedback": "Feedback",
+
+
+        "feedback_form": "Contact us",
+
+        "feedback_desc": "If you have any questions or suggestions, please feel free to contact us. We are always happy to help you!",
+        "feedback_reason": "We will try to answer you as soon as possible. If you have questions about our products or want to purchase our products, you can write to us by email or call us. We are always happy to help you with your choice and answer your questions."
     },
     "footer": {
         "privacy_policy": "Privacy policy",
@@ -38,6 +48,18 @@
 
         "all": "All rights reserved."
 
+    },
+    "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "message": "Message",
+        "send": "Send",
+        "sending": "Sending...",
+        "send_success": "Your message has been sent successfully. We will contact you soon.",
+        "send_error": "The message failed to send.",
+        "send_desc": "Please fill in all fields.",
+        "desc": "Thank you for contacting us. We will try to respond as soon as possible."
     },
     "search": {
         "search": "Search",

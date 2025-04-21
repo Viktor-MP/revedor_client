@@ -1,20 +1,28 @@
 import styles from "./Footer.module.scss"
 
 import React from "react"
-
-import { providerPath as path } from "../../../routing/routingPath"
+import {
+    providerPath as path,
+    unChangedPath as unPath,
+} from "../../../routing/routingPath"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"
+import DrawLinks from "../../Atoms/DrawLinks/DrawLinks"
 
 export const Footer = () => {
     const { t, i18n } = useTranslation()
+
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                {/* Логотип + Описание */}
                 <div className={styles.section}>
-                    <h2 className={styles.logo}>{path.shopName}</h2>
+                    <h2 className={styles.logo}>{unPath.shopName}</h2>
                     <p className={styles.description}>{t("footer.desc")}</p>
+                    {DrawLinks({
+                        object: unPath.webUrl,
+                        valueState: true,
+                    })}
+                   
                 </div>
 
                 {/* Навигация */}
@@ -33,19 +41,19 @@ export const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Соцсети */}
+                {/* Контакты */}
                 <div className={styles.section}>
-                    <h3>{t("footer.social")}</h3>
+                    <h3>Контакты</h3>
                     <ul>
-                        {Object.entries(path.webUrl).map(
-                            ([key, value], index) => (
-                                <li key={key}>
-                                    <Link to={value} target="_blank">
-                                        {key}
-                                    </Link>
-                                </li>
-                            )
-                        )}
+                        <li>
+                            <a href={unPath.contacts.email} >
+                                {unPath.contacts.email} 
+                            </a>
+                        </li>
+                        <li>
+                            <a href={unPath.contacts.tel} >{unPath.contacts.phone}</a>
+                        </li>
+                        
                     </ul>
                 </div>
 
@@ -69,7 +77,9 @@ export const Footer = () => {
 
             {/* Нижний блок */}
             <div className={styles.copyright}>
-                <p>© 2025 {path.shopName}. {t("footer.all")}</p>
+                <p>
+                    © 2025 {unPath.shopName}. {t("footer.all")}
+                </p>
             </div>
         </footer>
     )

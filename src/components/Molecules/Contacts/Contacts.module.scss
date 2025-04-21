@@ -74,3 +74,25 @@
     color: var(--purple);
   }
 }
+
+.contactInfo {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4caf50;
+    border-radius: 8px;
+
+    p {
+        margin: 6px 0;
+        font-size: 16px;
+
+        a {
+            color: #0077cc;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

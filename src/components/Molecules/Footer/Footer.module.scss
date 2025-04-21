@@ -1,19 +1,11 @@
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+@use "../../global.scss" as *;
 
 .footer {
     background: #222;
     color: #fff;
     padding: 40px 20px;
     text-align: center;
+
     animation: fadeIn 1s ease-out; // Анимация появления
 
 

@@ -1,23 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Styles from "./Contacts.module.scss"
 import classNames from "classnames"
 import { sendGmail } from "../../../axios/functions"
-
-// const sendEmail = async () => {
-//     const response = await fetch("http://localhost:5000/api/send_email", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({
-//             from: "http://localhost:5000.com",
-//             to: "viktormelikparsadanyan.com",
-//             subject: "Hello from Resend",
-//             html: <strong>Welcome!</strong>,
-//         }),
-//     })
-
-//     const data = await response.json()
-//     console.log(data)
-// }
+import { useTranslation } from "react-i18next"
 
 const Contacts = ({ className }) => {
     const gmailKey = import.meta.env.VITE_GMAIL_API_KEY
@@ -26,53 +11,50 @@ const Contacts = ({ className }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        phone: "",
         message: "",
     })
     const [status, setStatus] = useState("")
 
+    const { t, i18n } = useTranslation()
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setStatus("Отправка...")
+        setStatus(t("form.sending"))
 
         try {
             const gmail = await sendGmail(formData)
             console.log(gmail)
-            // Здесь можно интегрировать API для отправки в Gmail, Telegram и другие сервисы
-            // Например, отправка на сервер, который разошлёт сообщения по нужным каналам
-
-            setTimeout(() => setStatus("Сообщение отправлено!"), 2000) // Заглушка для имитации запроса
+            setStatus(t("form.send_success"))
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                message: "",
+            })
         } catch (error) {
-            setStatus("Ошибка отправки")
+            setStatus(t("form.sending_error"))
+            console.error("Error sending email:", error)
         } finally {
-            setTimeout(() => setStatus(""), 2000) // Заглушка для имитации запроса
+            setTimeout(() => setStatus(""), 2000)
         }
-   
     }
 
- 
     return (
-        <main
-            className={classNames({
-                [Styles["contacts"]]: !className,
-            })}
-        >
-            <h2>Свяжитесь с нами</h2>
-            <p>
-                Вы можете написать нам по электронной почте, в Telegram или
-                через форму ниже.
-            </p>
-
-        
+        <main className={classNames(Styles.contacts, className)}>
+            <h2>{t("contacts.feedback_form")}</h2>
+            <p>{t("contacts.feedback_desc")}</p>
+            <p>{t("contacts.feedback_reason")}</p>
 
             <form onSubmit={handleSubmit} className={Styles.form}>
                 <input
                     type="text"
                     name="name"
-                    placeholder="Ваше имя"
+                    placeholder={t("form.name")}
+                    autoComplete="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -80,8 +62,26 @@ const Contacts = ({ className }) => {
                 <input
                     type="email"
                     name="email"
-                    placeholder="Ваш Email"
+                    placeholder={t("form.email")}
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    autoComplete="email"
+                    autoCorrect="off"
+                    autoCapitalize="off"
+                    spellCheck="false"
                     value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+                <input
+                    type="phone"
+                    name="phone"
+                    placeholder={t("form.phone")}
+                    pattern="^\+?[0-9]{1,3}?[0-9]{7,14}$"
+                    autoComplete="tel"
+                    autoCorrect="off"
+                    autoCapitalize="off"
+                    spellCheck="false"
+                    value={formData.phone}
                     onChange={handleChange}
                     required
                 />
@@ -92,7 +92,7 @@ const Contacts = ({ className }) => {
                     onChange={handleChange}
                     required
                 />
-                <button type="submit">Отправить</button>
+                <button type="submit">{t("form.send")}</button>
             </form>
 
             {status && <p className={Styles.status}>{status}</p>}

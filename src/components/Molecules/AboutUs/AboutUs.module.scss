@@ -1,7 +1,9 @@
 @use "../../global.scss" as *;
+@use "../../../Variables.scss" as vars;
 
 .main {
-    max-height: 92dvh;
+    /* max-height: 92dvh; */
+    height: min-content;
     padding: var(--page_pad);
     display: flex;
     flex-direction: column;
@@ -11,7 +13,7 @@
     gap: 1.5rem;
     align-items: center;
     text-align: justify;
-    overflow: hidden;
+    overflow: auto;
 
     h2 {
         font-size: 3rem;

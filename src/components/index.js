@@ -20,4 +20,5 @@ export { default as ProductCard } from "./Atoms/ProductCard/ProductCard.jsx"
 export { default as ErrorMessage } from "./Atoms/ErrorMessage/ErrorMessage.jsx"
 export { default as ProductWindow } from "./Atoms/ProductWindow/ProductWindow.jsx"
 export { default as SkeletonLoader } from "./Atoms/Skillets/SkeletonLoader/SkeletonLoader.jsx"
+export { default as DrawLinks } from "./Atoms/DrawLinks/DrawLinks.jsx"
 
